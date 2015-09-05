@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-2.1.4.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div >
+      <ul class="artists">
+
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+        var wifi;
+
+        function findWifiNetwork() {
+          artist = prompt('Start by entering an artist name', '...');
+          console.log(artist);
+      }
+        findArtist();
+
+      function getWifiData() {
+
+        $.ajax({
+          type: 'GET',
+          dataType: 'json',
+          cache: false,
+          url: 'http://developer.echonest.com/api/v4/artist/similar?api_key=Y8KS14ODJWTZXWNQ2&name='+ artist,
+          success: function(data) {
+            console.log(data);
+            }
+
+        })
+      }
+      getWifiData();
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
