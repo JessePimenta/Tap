@@ -1,47 +1,26 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="http://code.jquery.com/jquery-2.1.4.js" charset="utf-8"></script>
+    <head>
+    <title>Tap</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+    <script src="https://bootswatch.com/paper/bootstrap.min.css" charset="utf-8"></script>
+        <script src="app.js"></script>
   </head>
-  <body>
-    <div >
-      <ul class="artists">
+    <body ng-app="app" ng-controller="Main as main">
+    <h1>Tap.</h1>
 
-      </ul>
-    </div>
+    <input type="text" ng-model="main.username" placeholder="username"><br>
+    <input type="password" ng-model="main.password" placeholder="password"><br>
+    <br>
 
-    <script type="text/javascript">
-        var wifi;
+    <button ng-click="main.register()">Register</button>
+    <button ng-click="main.login()">Login</button>
+    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
 
-        function findWifiNetwork() {
-          artist = prompt('Start by entering an artist name', '...');
-          console.log(artist);
-      }
-        findArtist();
+    <button ng-click="main.getQuote()">get quote</button>
+    <br><br>
+    {{main.message}}
 
-      function getWifiData() {
-
-        $.ajax({
-          type: 'GET',
-          dataType: 'json',
-          cache: false,
-          url: 'http://developer.echonest.com/api/v4/artist/similar?api_key=Y8KS14ODJWTZXWNQ2&name='+ artist,
-          success: function(data) {
-            console.log(data);
-            }
-
-        })
-      }
-      getWifiData();
-
-
-
-
-
-
-
-    </script>
-  </body>
+    <br><br><br>
+    <a href="https://twitter.com/IAmMattGreen">shameless plug</a>
+    </body>
 </html>
