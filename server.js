@@ -115,7 +115,7 @@ var Lender     = require('./models/Lender');
 
 // Connect to DB
 // mongoose.connect(process.env.MONGO_URL);
-mongoose.connect('mongodb://jesseP:<packers1>@ds035673.mongolab.com:35673/tap')
+mongoose.connect('mongodb://jesseP:packers1@ds035673.mongolab.com:35673/tap')
 
 
 process.on('uncaughtException', function(err) {
