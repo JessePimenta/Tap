@@ -4,12 +4,12 @@ var Schema = mongoose.Schema;
 var LenderSchema = new Schema({
     email: String,
     password:String,
-    bank account: {
+    bankAccount:{
       bankName: String,
       acctNumber: Number,
       routingNumber: Number
     },
-    wifiNetwork: {
+    wifiNetwork:{
       networkName: String,
       networkPass: String
     }
