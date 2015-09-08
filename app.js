@@ -4,6 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongodbUri = require('mongodb-uri');
+var mongolabsUri =   'mongodb://jesseP:packers1@ds035673.mongolab.com:35673/tap'
+
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -44,7 +47,7 @@ passport.deserializeUser(User.deserializeUser());
 app.locals.title = 'Tap';
 
 // connect to MongoDB
-var dbURL = 'mongodb://localhost:27017/passport-auth';
+var dbURL = 'mongodb://jesseP:packers1@ds035673.mongolab.com:35673/tap';
 mongoose.connect(dbURL);
 var db = mongoose.connection;
 
