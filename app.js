@@ -12,7 +12,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 
 var app = express();
-
+var apiRouter = express.Router();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,6 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
+app.use('/api', apiRouter)
+
 
 var User = require('./models/User');
 passport.use(new LocalStrategy(User.authenticate()));
@@ -46,6 +48,8 @@ var dbURL = 'mongodb://localhost:27017/passport-auth';
 mongoose.connect(dbURL);
 var db = mongoose.connection;
 
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -54,7 +58,13 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
+apiRouter.route('/users')
+.get(function(req,res){
+  User.find({}, function(err,users){
+    if (err) return res.status(401).send({message: err.errmsg});
+    res.json(users)
+  })
+})
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
