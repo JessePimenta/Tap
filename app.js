@@ -44,6 +44,11 @@ app.locals.title = 'Auth with Passport';
 // connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/passport-auth');
 
+var MongoStore = require('express-session-mongo');
+app.use(express.session({ store: new MongoStore() }));
+
+db.sessions.ensureIndex( { "lastAccess": 1 }, { expireAfterSeconds: 3600 } )
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
