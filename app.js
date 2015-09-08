@@ -39,7 +39,7 @@ var User = require('./models/User');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-app.locals.title = 'Auth with Passport';
+app.locals.title = 'Tap';
 
 // connect to MongoDB
 var dbURL = 'mongodb://localhost:27017/passport-auth';

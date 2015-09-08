@@ -9,7 +9,13 @@ var User = new mongoose.Schema({
   lastName: String,
   bankName: String,
   bankAcctNum: Number,
-  bankRoutingNum: Number
+  bankRoutingNum: Number,
+  creditCardNum: Number,
+  creditCardExp: Number,
+  creditCardCvCode: Number,
+  cardCompany: String,
+  borrower: Boolean,
+  lender: Boolean
 });
 
 User.plugin(passportLocalMongoose);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body class="container">
+    <br>
+    <div class="row jumbotron text-center">
+      <h1><%= title %></h1>
+    </div>
+    <div class="row text-center">
+      <div class="panel panel-default col-xs-4 col-xs-offset-4">
+        <div class="panel-body">
+          <% if (user.lender ==true ) { %>
+            <p>You are currently logged in as<br><strong><%= user.username %></strong></p>
+            <p>Your Lending Network is:<br><strong><%= user.wifiName %></strong></p>
+            <p>Your IP Address is:<br><strong><%= user.ipAddress %></strong></p>
+            <p>Your first name is:<br><strong><%= user.firstName %></strong></p>
+            <p>Your last name is:<br><strong><%= user.lastName %></strong></p>
+            <p>Your bank is:<br><strong><%= user.bankName %></strong></p>
+            <p>Your Bank Account Number is:<br><strong><%= user.bankAcctNum %></strong></p>
+            <p>Your Routing Number is:<br><strong><%= user.bankRoutingNum %></strong></p>
+            <a href="/logout" class="btn btn-danger">Logout</a>
+            <a href="/map" class="btn btn-primary">Next</a>
+            <% }else if(user.borrower == true){  %>
+              <p>You are currently logged in as<br><strong><%= user.username %></strong></p>
+              <p>Your creditCardNum:<br><strong><%= user.creditCardNum %></strong></p>
+              <p>Your Expiration Date Is:<br><strong><%= user.creditCardExp %></strong></p>
+              <p>Your CV Code is:<br><strong><%= user.creditCardCvCode %></strong></p>
+              <p>Your first name is:<br><strong><%= user.firstName %></strong></p>
+              <p>Your last name is:<br><strong><%= user.lastName %></strong></p>
+              <a href="/logout" class="btn btn-danger">Logout</a>
+              <a href="/map" class="btn btn-primary">Next</a>
+          <% } else { %>
+            <p>
+              I'm already a member
+            </p>
+            <a href="/login" class="btn btn-primary">Login</a>
+            <br>
+            <br>
+              I want to sign up as a
+            <br>
+            <a href="/register" class="btn btn-info">Lender</a>
+            <a href="/register/borrower" class="btn btn-info">Borrower</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

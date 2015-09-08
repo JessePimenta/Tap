@@ -13,6 +13,19 @@ router.get('/', function(req, res, next) {
 router.get('/register', function(req, res) {
   res.render('auth/register');
 });
+router.get('/register/borrower', function(req, res) {
+  res.render('auth/register_borrower');
+});
+
+router.get('/profile', function(req, res, next) {
+  res.render('profile', {
+    user: req.user
+  });
+});
+
+router.get('/map', function(req, res, next) {
+  res.render('map');
+});
 
 router.post('/register', function (req, res) {
  User.register(new User({
@@ -23,6 +36,7 @@ router.post('/register', function (req, res) {
    firstName: req.body.firstName,
    lastName: req.body.lastName,
    bankName: req.body.bankName,
+   lender: true,
    bankAcctNum: req.body.bankAcctNum,
    bankRoutingNum: req.body.bankRoutingNum }), req.body.password, function(err, user) {
    if (err) return res.render('auth/register', {user: user});
@@ -31,7 +45,30 @@ router.post('/register', function (req, res) {
        if (err) {
          return next(err);
        }
-       res.redirect('/');
+       res.redirect('/profile');
+     });
+   });
+ });
+});
+
+router.post('/register/borrower', function (req, res) {
+ User.register(new User({
+   username: req.body.username,
+   firstName: req.body.firstName,
+   lastName: req.body.lastName,
+   creditCardNum: req.body.creditCardNum,
+   creditCardExp: req.body.creditCardExp,
+   creditCardCvCode: req.body.creditCardCvCode,
+   cardCompany: req.body.cardCompany,
+   borrower: true
+  }), req.body.password, function(err, user) {
+   if (err) return res.render('auth/register_borrower', {user: user});
+   passport.authenticate('local')(req, res, function () {
+     req.session.save(function (err) {
+       if (err) {
+         return next(err);
+       }
+       res.redirect('/profile');
      });
    });
  });

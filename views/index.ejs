@@ -13,19 +13,19 @@
       <div class="panel panel-default col-xs-4 col-xs-offset-4">
         <div class="panel-body">
           <% if (user) { %>
-            <p>You are currently logged in as<br><strong><%= user.username %></strong></p>
-            <p>Your Lending Network is:<br><strong><%= user.wifiName %></strong></p>
-            <p>Your IP Address is:<br><strong><%= user.ipAddress %></strong></p>
-            <p>Your first name is:<br><strong><%= user.firstName %></strong></p>
-            <p>Your last name is:<br><strong><%= user.lastName %></strong></p>
-            <p>Your bank is:<br><strong><%= user.bankName %></strong></p>
-            <p>Your Bank Account Number is:<br><strong><%= user.bankAcctNum %></strong></p>
-            <p>Your Routing Number is:<br><strong><%= user.bankRoutingNum %></strong></p>
-            <a href="/logout" class="btn btn-danger">Logout</a>
-            <a href="/index" class="btn btn-primary">Next</a>
+              <a href="/logout" class="btn btn-danger">Logout</a>
+              <a href="/map" class="btn btn-primary">Next</a>
           <% } else { %>
+            <p>
+              I'm already a member
+            </p>
             <a href="/login" class="btn btn-primary">Login</a>
-            <a href="/register" class="btn btn-info">Register</a>
+            <br>
+            <br>
+              I want to sign up as a
+            <br>
+            <a href="/register" class="btn btn-info">Lender</a>
+            <a href="/register/borrower" class="btn btn-info">Borrower</a>
           <% } %>
         </div>
       </div>
