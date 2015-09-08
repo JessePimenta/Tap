@@ -13,6 +13,9 @@ router.get('/', function(req, res, next) {
 router.get('/register', function(req, res) {
   res.render('auth/register');
 });
+router.get('/wifinetwork', function(req, res) {
+  res.render('wifinetwork')
+});
 router.get('/register/borrower', function(req, res) {
   res.render('auth/register_borrower');
 });
@@ -23,8 +26,10 @@ router.get('/profile', function(req, res, next) {
   });
 });
 
+
 router.get('/map', function(req, res, next) {
-  res.render('map');
+  res.render('map', {
+  });
 });
 
 router.post('/register', function (req, res) {

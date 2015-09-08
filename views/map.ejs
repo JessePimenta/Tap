@@ -11,7 +11,7 @@
         padding: 0;
       }
       #map {
-        top: 40px;
+        top: 20px;
         bottom: 50px;
         height: 60%;
         width: 40%;
@@ -22,6 +22,21 @@
       }
 
     </style>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Home</a></li>
+      <li class=""><a href="/profile" data-toggle="tab" aria-expanded="false">Profile</a></li>
+      <li class=""><a href="/Map">Map</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+          <li class="divider"></li>
+          <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+        </ul>
+      </li>
+    </ul>
   </head>
   <body>
     <div class="container">
@@ -35,6 +50,8 @@ Find the nearest networks to Tap into!
 </p>
   </div>
 <div id="map"></div>
+<br>
+<br>
     <script>
 
 function initMap() {
@@ -80,7 +97,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     </script>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" media="screen" title="no title" charset="utf-8">    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">%>
   </body>
 </html>

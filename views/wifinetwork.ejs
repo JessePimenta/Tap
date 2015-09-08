@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <script type="text/javascript">
+
+    // Get the connection type.
+    var type = navigator.connection.type;
+
+    // The maximum downlink speed of the connection
+    var max = navigator.connection.downlinkMax;
+
+    function changeHandler(e) {
+    // Handle change to connection here.
+    }
+
+    // Register for event changes.
+    navigator.connection.onchange = changeHandler;
+
+    // Alternatively.
+    navigator.connection.addEventListener('change', changeHandler);
+    </script>
+  </body>
+</html>
