@@ -4,13 +4,63 @@
   <title><%= title %></title>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" media="screen" title="no title" charset="utf-8">    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">%>
+  <link rel="stylesheet" href="/stylesheets/foundation/css/foundation.css" media="screen" title="no title" charset="utf-8">
+  <!-- Navigation -->
+    <div class="contain-to-grid sticky">
 
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a class="logo show-for-small-only" href="#"><img src="public/stylesheets/logo/Tap_logo.png" /></a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <div class="logo-wrapper hide-for-small-only">
+            <div class="logo">
+              <a href="/">  <img src="stylesheets/logo/Tap_logo_cropped.png" height="100px"></a>
+            </div>
+
+    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+          </div>
+
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="center">
+            <li>
+              <a href="#">Map</a>
+              <li class="">
+                <li><a href="#">My Account</a></li>
+              </li>
+              <ul class="dropdown">
+                <li><a href="#">My Account</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Settings</a>
+              <ul class="dropdown">
+                <li><a href="#">My Stats</a></li>
+                <li><a href="#">My Network Info</a></li>
+
+              </ul>
+            </li>
+          </ul>
+
+        </section>
+      </nav>
+
+    </div><!-- /navigation -->
 </head>
 <body class="container">
   <br>
-  <div class="row jumbotron text-center">
-    <h1><%= title %></h1>
-  </div>
+
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <div class="panel panel-default">
@@ -58,7 +108,7 @@
               <input type="text" id="lastName" class="form-control" name="bankRoutingNum">
             </div>
             <div class="form-group text-right">
-              <input type="submit" class="btn btn-success" value="Register">
+              <input type="submit" class="btn btn-info" value="Register">
             </div>
           </form>
         </div>

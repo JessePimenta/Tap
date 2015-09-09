@@ -71,10 +71,17 @@ app.use(function(req, res, next) {
 // error handlers
 apiRouter.route('/users')
 .get(function(req,res){
-  User.find({}, function(err,users){
-    if (err) return res.status(401).send({message: err.errmsg});
-    res.json(users)
-  })
+  if(isLoggedIn()){
+    User.find({}, function(err,users){
+      if (err) return res.status(401).send({message: err.errmsg});
+      res.json(users)
+    })
+  } else {
+    //
+    res.json({message: 'Not logged in'});
+  }
+
+
 })
 // development error handler
 // will print stacktrace

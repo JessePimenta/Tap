@@ -26,27 +26,24 @@
 
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">Logout</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
 
           <!-- Left Nav Section -->
           <ul class="center">
             <li>
-              <a href="#">Map</a>
+              <a href="/map">Map</a>
               <li class="">
-                <li><a href="#">My Account</a></li>
+                <li><a href="/profile">My Account</a></li>
               </li>
-              <ul class="dropdown">
-                <li><a href="#">My Account</a></li>
-              </ul>
             </li>
             <li class="has-dropdown">
               <a href="#">Settings</a>
               <ul class="dropdown">
-                <li><a href="#">My Stats</a></li>
-                <li><a href="#">My Network Info</a></li>
+                <li><a href="/profile/stats">My Stats</a></li>
+                <li><a href="/profile/net-info">My Network Info</a></li>
 
               </ul>
             </li>
@@ -68,18 +65,20 @@
     <div class="text-center">
       <div>
         <div class="panel-body">
-              <img src="stylesheets/logo/Tap_logo-LG.png" alt="" height='500px' width='500px' />
+            <a href="/"> <img src="stylesheets/logo/Tap_logo-LG.png" height='500px' width='500px' /></a> 
           <% if (user) { %>
               <a href="/logout" class="btn btn-danger">Logout</a>
               <a href="/map" class="btn btn-primary">Next</a>
           <% } else { %>
-            <p>
-              I'm already a member
+            <p class='top-bar-section ul li > a.button'>
+              I'm already a member.
             </p>
-            <a href="/login" class="btn btn-primary">Login</a>
+            <a href="/login" class="btn btn-info">Login</a>
             <br>
             <br>
-              I want to sign up as a
+            <p color='white'>
+              I'm new here. Sign me Up!
+            </p>
             <br>
             <a href="/register" class="btn btn-info">Lender</a>
             <a href="/register/borrower" class="btn btn-info">Borrower</a>

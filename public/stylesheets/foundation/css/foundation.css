@@ -1,3 +1,6 @@
+
+
+
 meta.foundation-version {
   font-family: "/5.5.2/"; }
 
@@ -60,7 +63,7 @@ body {
 
 body {
   background: #3367B1;
-  color: #222;
+  color: white;
   cursor: auto;
   font-family: "Arial Black", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
@@ -72,6 +75,22 @@ body {
 
 a:hover {
   cursor: pointer; }
+
+  .button {
+    color: transparent;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    border: 4px solid transparent;
+    border-image: linear-gradient(45deg, pink, skyblue);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, pink, skyblue);
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    transition: all 0.2s ease; }
+    .button:hover {
+      border-image: linear-gradient(45deg, #2ecc71, dodgerblue);
+      background: linear-gradient(45deg, #2ecc71, dodgerblue);
+     }
 
 img {
 
@@ -1854,7 +1873,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       display: block;
       font-family: "Arial Black", Helvetica, Roboto, Arial, sans-serif;
-      font-size: 1.7125rem;
+      font-size: 1.6125rem;
       font-weight: normal;
       padding-left: 0.9375rem;
       padding: 12px 0 12px 0.9375rem;
