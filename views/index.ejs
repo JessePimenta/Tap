@@ -5,17 +5,70 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" media="screen" title="no title" charset="utf-8">    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">%>
     <link rel="stylesheet" href="/stylesheets/foundation/css/foundation.css" media="screen" title="no title" charset="utf-8">
+    <div class="contain-to-grid sticky">
+
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a class="logo show-for-small-only" href="#"><img src="public/stylesheets/logo/Tap_logo.png" /></a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <div class="logo-wrapper hide-for-small-only">
+            <div class="logo">
+              <!-- <img src="stylesheets/logo/Tap_logo_cropped.png" height="100px"> -->
+            </div>
+
+    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+          </div>
+
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="center">
+            <li>
+              <a href="#">Map</a>
+              <li class="">
+                <li><a href="#">My Account</a></li>
+              </li>
+              <ul class="dropdown">
+                <li><a href="#">My Account</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Settings</a>
+              <ul class="dropdown">
+                <li><a href="#">My Stats</a></li>
+                <li><a href="#">My Network Info</a></li>
+
+              </ul>
+            </li>
+          </ul>
+
+        </section>
+      </nav>
+
+    </div>
+    <!-- /navigation -->
   </head>
   <body class="container">
     <div class="logo">
     </div>
     <br>
-    <div class="row jumbotron text-center">
+    <!-- <div class="">
       <h1><%= title %></h1>
-    </div>
-    <div class="row text-center">
-      <div class="panel panel-default col-xs-4 col-xs-offset-4">
+    </div> -->
+    <div class="text-center">
+      <div>
         <div class="panel-body">
+              <img src="stylesheets/logo/Tap_logo-LG.png" alt="" height='500px' width='500px' />
           <% if (user) { %>
               <a href="/logout" class="btn btn-danger">Logout</a>
               <a href="/map" class="btn btn-primary">Next</a>
@@ -25,7 +78,6 @@
             </p>
             <a href="/login" class="btn btn-primary">Login</a>
             <br>
-              <img src="https://cdn0.iconfinder.com/data/icons/seo-smart-pack/128/grey_new_seo-10-512.png" alt="" width='50%' />
             <br>
               I want to sign up as a
             <br>
