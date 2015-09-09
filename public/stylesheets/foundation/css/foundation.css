@@ -1,4 +1,6 @@
-
+* {
+  transition: 2s;
+}
 
 
 meta.foundation-version {
@@ -71,7 +73,9 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  position: relative; }
+  position: relative;
+  opacity: .8;
+ }
 
 a:hover {
   cursor: pointer; }
@@ -114,6 +118,11 @@ img {
 .mqa-display embed,
 .mqa-display object {
   max-width: none !important; }
+
+  img:hover {
+    height: 70%;
+    width: 55%;
+  }
 
 .left {
   float: left !important; }
@@ -3757,7 +3766,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  color: #222222;
+  color: white;
   font-family: "Arial Black", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
