@@ -18,7 +18,9 @@ var User = new mongoose.Schema({
   creditCardCvCode: Number,
   cardCompany: String,
   borrower: Boolean,
-  lender: Boolean
+  lender: Boolean,
+  latitude: Number,
+  longitude: Number
 });
 
 User.plugin(passportLocalMongoose);

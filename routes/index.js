@@ -42,6 +42,8 @@ router.post('/register', function (req, res) {
    lastName: req.body.lastName,
    bankName: req.body.bankName,
    lender: true,
+   latitude: req.body.latitude,
+   longitude: req.body.longitude,
    bankAcctNum: req.body.bankAcctNum,
    bankRoutingNum: req.body.bankRoutingNum }), req.body.password, function(err, user) {
    if (err) return res.render('auth/register', {user: user});
@@ -50,11 +52,18 @@ router.post('/register', function (req, res) {
        if (err) {
          return next(err);
        }
-       res.redirect('/profile');
+       res.redirect('/map');
      });
    });
  });
 });
+
+router.post('/map', function(req,res){
+  User.findOneAndUpdate({ipAddress: req.body.ipAddress}, req.body, function(err, user){
+    if (err) return res.render('profile', {user: user});
+    
+  })
+})
 
 router.post('/register/borrower', function (req, res) {
  User.register(new User({
