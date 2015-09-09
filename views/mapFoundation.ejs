@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=2.0, user-scalable=yes">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <title></title>
+  <link rel="stylesheet" href="stylesheets/foundation/css/foundation.css" media="screen" title="no title" charset="utf-8">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      top: 20px;
+      bottom: 50px;
+      height: 60%;
+      width: 40%;
+      margin: auto;
+      padding-top: 100px;
+      padding-bottom: 100px;
+
+    }
+
+  </style>
+  <!-- Navigation -->
+    <div class="contain-to-grid sticky">
+
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a class="logo show-for-small-only" href="#"><img src="public/stylesheets/logo/Tap_logo.png" /></a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <div class="logo-wrapper hide-for-small-only">
+            <div class="logo">
+              <img src="stylesheets/logo/Tap_logo_cropped.png" height="100px">
+            </div>
+
+    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+          </div>
+
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="center">
+            <li>
+              <a href="#">Map</a>
+              <li class="">
+                <li><a href="#">My Account</a></li>
+              </li>
+              <ul class="dropdown">
+                <li><a href="#">My Account</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Settings</a>
+              <ul class="dropdown">
+                <li><a href="#">My Stats</a></li>
+                <li><a href="#">My Network Info</a></li>
+
+              </ul>
+            </li>
+          </ul>
+
+        </section>
+      </nav>
+
+    </div><!-- /navigation -->
+  </head>
+  <body>
+    <br>
+    <br>
+
+    <div id="map"></div>
+    <br>
+    <br>
+    <div class="text-center">
+    <button class='btn btn-warning' type="button" name="button">Save My Network Location</button>
+
+    </div>
+
+  <script>
+
+function initMap() {
+var map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 15
+});
+var infoWindow = new google.maps.InfoWindow({map: map});
+
+// Try HTML5 geolocation.
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    console.log(pos);
+
+    infoWindow.setPosition(pos);
+    infoWindow.setContent('This is you!');
+    map.setCenter(pos);
+  }, function() {
+    handleLocationError(true, infoWindow, map.getCenter());
+  });
+} else {
+  // Browser doesn't support Geolocation
+  handleLocationError(false, infoWindow, map.getCenter());
+}
+}
+
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+infoWindow.setPosition(pos);
+infoWindow.setContent(browserHasGeolocation ?
+                      'Error: The Geolocation service failed.' :
+                      'Error: Your browser doesn\'t support geolocation.');
+}
+
+$('button').click(function(){
+console.log('hello');
+})
+// F4Pos8QrL-oy7lZIFB6MUl-8vWay_tHA
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
+      async defer>
+  </script>
+
+  </body>
+</html>

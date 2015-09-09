@@ -28,7 +28,7 @@ router.get('/profile', function(req, res, next) {
 
 
 router.get('/map', function(req, res, next) {
-  res.render('map', {
+  res.render('mapFoundation', {
   });
 });
 
@@ -61,7 +61,7 @@ router.post('/register', function (req, res) {
 router.post('/map', function(req,res){
   User.findOneAndUpdate({ipAddress: req.body.ipAddress}, req.body, function(err, user){
     if (err) return res.render('profile', {user: user});
-    
+
   })
 })
 
