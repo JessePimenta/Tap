@@ -52,7 +52,7 @@
 <button class='btn btn-success' type="button" name="button">Save My Network Location</button>
 </p>
   </div>
-<div id="map"></div>
+<div class='AnyUnusedClassName' id="map"></div>
 <br>
 <br>
     <script>
@@ -74,7 +74,7 @@ function initMap() {
       console.log(pos);
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent('This is you!');
+      infoWindow.setContent('This is your network!<br>Your Network Name:WifiForEveryone');
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());

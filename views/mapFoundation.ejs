@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" media="screen" title="no title" charset="utf-8">    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">%>
+
   <link rel="stylesheet" href="stylesheets/foundation/css/foundation.css" media="screen" title="no title" charset="utf-8">
   <style>
     html, body {
@@ -46,9 +48,9 @@
 
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">Logout</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/">About Us</a></li>
+            <li><a href="/">Contact</a></li>
           </ul>
 
           <!-- Left Nav Section -->
@@ -56,17 +58,17 @@
             <li>
               <a href="#">Map</a>
               <li class="">
-                <li><a href="#">My Account</a></li>
+                <li><a href="/profile">My Account</a></li>
               </li>
               <ul class="dropdown">
-                <li><a href="#">My Account</a></li>
+                <li><a href="/profile">My Account</a></li>
               </ul>
             </li>
             <li class="has-dropdown">
-              <a href="#">Settings</a>
+              <a href="#/">Settings</a>
               <ul class="dropdown">
-                <li><a href="#">My Stats</a></li>
-                <li><a href="#">My Network Info</a></li>
+                <li><a href="/stats">My Stats</a></li>
+                <li><a href="/net-info">My Network Info</a></li>
 
               </ul>
             </li>
@@ -85,7 +87,7 @@
     <br>
     <br>
     <div class="text-center">
-    <button class='btn btn-warning' type="button" name="button">Save My Network Location</button>
+    <a href="/profile" class="btn btn-primary">Back</a>
 
     </div>
 
@@ -107,15 +109,19 @@ if (navigator.geolocation) {
     };
     console.log(pos);
 
+
+    var marker = new google.maps.Marker({
+    position: pos,
+    map: map,
+
+  });
+
     infoWindow.setPosition(pos);
-    infoWindow.setContent('This is you!');
+    infoWindow.setContent('This is you!<br>Your Network is: WifiForEveryone<br>Connections Today: 2<br>Daily Total: $2.00<br>Network Strength: 111.13 mbps');
     map.setCenter(pos);
   }, function() {
     handleLocationError(true, infoWindow, map.getCenter());
   });
-} else {
-  // Browser doesn't support Geolocation
-  handleLocationError(false, infoWindow, map.getCenter());
 }
 }
 

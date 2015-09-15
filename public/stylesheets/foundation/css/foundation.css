@@ -1,7 +1,27 @@
 * {
-  transition: 2s;
+  transition: 1.8s ease;
+}
+.AnyUnusedClassName {
+color: #000000;
 }
 
+
+.firstwave {
+  position: relative;
+  bottom: -29px;
+  left: -3px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.secondwave {
+  position: relative;
+  bottom: -56px;
+  left: 1px;
+  width: 118px;
+  max-width: 300px;
+  max-height: 300px;
+}
 
 meta.foundation-version {
   font-family: "/5.5.2/"; }
@@ -63,9 +83,13 @@ body {
   font-size: 100%;
   background: '#3367B1'}
 
+  .element.style{
+        color: black;
+  }
+
 body {
   background: #3367B1;
-  color: white;
+  color: black;
   cursor: auto;
   font-family: "Arial Black", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
@@ -103,6 +127,8 @@ img {
 height: 52%;
 margin: auto;
 left: -28px;
+max-height: 600px;
+max-width: 600px;
  }
 
 img {

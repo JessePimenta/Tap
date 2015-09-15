@@ -32,6 +32,11 @@ router.get('/map', function(req, res, next) {
   });
 });
 
+router.get('/stats', function(req, res, next) {
+  res.render('map#/stats', {
+  });
+});
+
 router.post('/register', function (req, res) {
  User.register(new User({
    username: req.body.username,
@@ -101,7 +106,7 @@ router.post('/login', passport.authenticate(
   function(req, res, next) {
     req.session.save(function(err) {
       if (err) return next(err);
-      res.redirect('/');
+      res.redirect('/profile');
     });
   }
 );
