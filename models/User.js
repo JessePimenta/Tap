@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 var mongodbUri = require('mongodb-uri');
-var mongolabsUri =   'mongodb://jesseP:packers1@ds035673.mongolab.com:35673/tap'
+var mongolabsUri =   'mongodb://jesseP:packers1@apollo.modulusmongo.net:27017/yri3Rery';
 
 
 var User = new mongoose.Schema({
